@@ -1,3 +1,5 @@
+## code for inorder/preorder/postorder traversals of binary tree using both recursive and iterative methods.
+
 class TreeNode:
     def __init__(self, x):
         self.val = x
@@ -32,7 +34,6 @@ class Solution:
         return self.res
     
     def iter_traversal(self, root, mode):
-
         
         if mode == "inorder": # 1, R, r
             stack = []
