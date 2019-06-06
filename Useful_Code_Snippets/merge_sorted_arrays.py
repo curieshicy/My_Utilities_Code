@@ -25,6 +25,8 @@ def merge_sorted_arry_extra_space(nums1, nums2):
 
     return res
 
+# scenario 2: if extra space is not allowed. merge in-place
+
 def merge_sorted_arry_in_place(nums1, nums2):
     m = len(nums1) - len(nums2)
     n = len(nums2)
@@ -43,6 +45,9 @@ def merge_sorted_arry_in_place(nums1, nums2):
             j -= 1
             count -=1
 
+    # in extreme case where nums2 are much smaller than nums1
+    # j stays the same, then need to add nums2 as a whole
+    # that's where j + 1 comes from
     nums1[: j+1] = nums2[:j+1] 
     return nums1
 
