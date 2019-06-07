@@ -36,7 +36,7 @@ def merge_sorted_arry_in_place(nums1, nums2):
     count = m + n - 1
     
     while i >=0  and j >=0:
-        if nums1[i] > nums2[j]:
+        if nums1[i] >= nums2[j]:
             nums1[count] = nums1[i]
             i -= 1
             count -= 1
