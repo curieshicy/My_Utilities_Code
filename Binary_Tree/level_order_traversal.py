@@ -1,5 +1,4 @@
 # this is to implement level order traversal of a binary tree using both iterative and recursive methods
-
 from collections import deque
 import sys
 import unittest
@@ -31,7 +30,6 @@ class Solution:
                 if node.right:
                     queue.append(node.right)
             depth += 1
-
         return res
 
     def levelOrderTraversalRecursive(self, root):
@@ -56,8 +54,6 @@ class BST_Unittest(unittest.TestCase):
         super(BST_Unittest, self).__init__(*args, **kwargs)
         self.solution = Solution()
         # create a BST
-
-        ## test case
         ##        8
         ##    5         15
         ## 4    6    14    22
