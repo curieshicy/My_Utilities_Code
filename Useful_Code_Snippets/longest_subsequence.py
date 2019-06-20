@@ -22,15 +22,12 @@ class Solution:
             seenChar[s[i]] = i
         return length
             
-            
-
     def longestMaximumSubarray(self, arr):
         # [-1, 2, 3, 4, -5]
         best = local = arr[0]
         for i in range(1, len(arr)):
             local = max(arr[i], local + arr[i])
             best = max(local, best)
-
         return best
 
 class Test(unittest.TestCase):
@@ -52,5 +49,3 @@ class Test(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()   
-        
-        
