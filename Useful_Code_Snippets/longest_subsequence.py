@@ -17,7 +17,6 @@ class Solution:
         for i in range(len(s)):
             if s[i] in seenChar:
                 start = max(start, seenChar[s[i]] + 1)
-                
             length = max(length, i - start + 1)
             seenChar[s[i]] = i
         return length
@@ -28,6 +27,15 @@ class Solution:
         for i in range(1, len(arr)):
             local = max(arr[i], local + arr[i])
             best = max(local, best)
+        return best
+    
+     def maximumProductSubarray(self, arr):
+        local_min = local_max = best = arr[0]
+        for i in range(1, len(arr)):
+            prev_local_max, prev_local_min = local_max, local_min
+            local_max = max(prev_local_max * arr[i], arr[i], prev_local_min * arr[i])
+            local_min = min(prev_local_max * arr[i], arr[i], prev_local_min * arr[i])
+            best = max(local_max, best)
         return best
 
 class Test(unittest.TestCase):
