@@ -54,6 +54,9 @@ class Test(unittest.TestCase):
 
     def testLongestMaximumSubarray(self):
         self.assertEqual(self.solution.longestMaximumSubarray(self.array), 9)
+        
+    def testmaximumProductSubarray(self):
+        self.assertEqual(self.solution.maximumProductSubarray(self.array), 120)
 
 if __name__ == '__main__':
     unittest.main()   
