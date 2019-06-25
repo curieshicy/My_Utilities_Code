@@ -37,6 +37,16 @@ class Solution:
             local_min = min(prev_local_max * arr[i], arr[i], prev_local_min * arr[i])
             best = max(local_max, best)
         return best
+    
+     def maximumConsecutiveOnes(self, string):
+         local = best = 0
+         for i in range(len(string)):
+             if i == '1':
+                local += 1
+             else:
+                local = 0
+             best = max(best, local)
+         return best
 
 class Test(unittest.TestCase):
     def __init__(self, *args, **kwargs):
@@ -45,6 +55,7 @@ class Test(unittest.TestCase):
         self.num = [1,2,3,4,5]
         self.string = 'abcabcab'
         self.array = [-1, 2, 3, 4, -5]
+        self.ones =  '1111001'
 
     def testLongestTurbulentArray(self):
         self.assertEqual(self.solution.longestTurbulentArray(self.num), 2)
@@ -55,8 +66,11 @@ class Test(unittest.TestCase):
     def testLongestMaximumSubarray(self):
         self.assertEqual(self.solution.longestMaximumSubarray(self.array), 9)
         
-    def testmaximumProductSubarray(self):
+    def testMaximumProductSubarray(self):
         self.assertEqual(self.solution.maximumProductSubarray(self.array), 120)
+        
+    def testMaximumConsecutiveString(self):
+        self.assertEqual(self.solution.maximumConsecutiveOnes(self.ones), 4)
 
 if __name__ == '__main__':
     unittest.main()   
