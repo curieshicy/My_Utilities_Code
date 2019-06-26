@@ -33,14 +33,11 @@ class Solution:
         return res
 
     def levelOrderTraversalRecursive(self, root):
-
-        if not root:
-            return []
-
+        
         def _helper(node, res, depth):
             if not node:
-                return
-            if len(res) < depth + 1:
+                return []
+            if len(res) == depth:
                 res.append([])
             res[depth].append(node.val)
             _helper(node.left, res, depth + 1)
