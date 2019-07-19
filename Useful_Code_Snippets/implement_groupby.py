@@ -17,8 +17,7 @@ class Solution:
             else:
                 pair.append((char, count))
                 char = popped
-                count = 1
-                
+                count = 1       
         pair.append((char, count))
         return pair
 
@@ -26,7 +25,6 @@ class Solution:
         pair = []
         for key, group in groupby(s):
             pair.append((key, len(list(group))))
-
         return pair
 
 class Test(unittest.TestCase):
