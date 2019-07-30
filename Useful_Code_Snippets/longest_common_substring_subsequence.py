@@ -1,5 +1,4 @@
 import unittest
-
 class Solution:
 
     def longestCommonSubstring(self, A, B):
@@ -72,17 +71,11 @@ class Test(unittest.TestCase):
         super().__init__(*args, **kwargs)
         self.solution = Solution()
 
-
     def testLongestCommonSubstring(self):
         self.assertEqual(self.solution.longestCommonSubstring('abccd', 'ebccm'), 3)
-
 
     def testLongestCommonSubsequence(self):
         self.assertEqual(self.solution.longestCommonSubsequence('AGCAT', 'GAC'), 2)
 
-
 if __name__ == '__main__':
     unittest.main()
-
-    
-        
