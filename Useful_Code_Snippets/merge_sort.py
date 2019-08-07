@@ -46,14 +46,4 @@ class Test(unittest.TestCase):
         self.assertEqual(self.solution.mergeSort(self.arr), [0,0,1,1,2,5])
 
 if __name__ == '__main__':
-    unittest.main()
-    
-
-
-
-                                                                     
-                                                                     
-
-
-                                                                    
-                
+    unittest.main()                                      
