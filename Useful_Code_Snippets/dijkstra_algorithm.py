@@ -56,31 +56,3 @@ if __name__ == '__main__':
     parent['t'] = None
 
     print (dijkstra(graph, costs, parent))
-                
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
