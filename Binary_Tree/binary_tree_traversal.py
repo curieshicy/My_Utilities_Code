@@ -1,4 +1,5 @@
 ## code for inorder/preorder/postorder traversals of binary tree using both recursive and iterative methods.
+##https://leetcode.com/problems/binary-tree-inorder-traversal/discuss/527608/Python3-Pre-In-Post-Iteratively-Summarization
 
 class TreeNode:
     def __init__(self, x):
