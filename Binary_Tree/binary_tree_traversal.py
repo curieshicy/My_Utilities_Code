@@ -36,7 +36,7 @@ class Solution:
     
     def iter_traversal(self, root, mode):
         
-        if mode == "inorder": # 1, R, r
+        if mode == "inorder": # l, R, r
             stack = []
             while root or stack:
                 if root:
@@ -57,7 +57,7 @@ class Solution:
                     stack.append(node.right)
                     stack.append(node.left)
 
-        if mode == "postorder": # 1, r, R
+        if mode == "postorder": # l, r, R
             stack = [root]
             while stack:
                 node = stack.pop()
