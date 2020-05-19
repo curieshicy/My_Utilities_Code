@@ -14,6 +14,7 @@ def subset(nums):
     res = []
     def dfs(arr, index, path):
         res.append(path)
+        
         for i in range(index, len(arr)):
             dfs(arr, i + 1, path + [arr[i]])
     dfs(nums, 0, [])
@@ -21,14 +22,12 @@ def subset(nums):
 
 def combination(nums, k):
     res = []
-    def dfs(arr, path):
-        
+    def dfs(arr, path):        
         if len(path) == k:
             res.append(path)
             
         for i in range(len(arr)):
-            dfs(arr[i+1:], path + [arr[i]])
-    
+            dfs(arr[i+1:], path + [arr[i]])    
     dfs(nums, [])
     return res
 
