@@ -10,7 +10,6 @@ def permutation(nums):
     dfs(nums, [])
     return res
 
-
 def subset(nums):
     res = []
     def dfs(arr, index, path):
