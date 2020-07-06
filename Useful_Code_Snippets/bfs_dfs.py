@@ -19,7 +19,7 @@ def bfs(graph, start):
                     queue.append(k)
                     visited.add(k)
                     
-def dfs(graph, start, visited = set()):
+def dfs(graph, start, visited):
     if start not in visited:
         print (start)
         visited.add(start)
