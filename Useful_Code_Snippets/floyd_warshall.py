@@ -13,7 +13,6 @@ def floyd_warshall(edges, n):
             for t in range(n):
                 adj_mat[s][t] = min(adj_mat[s][t], adj_mat[s][i] + adj_mat[i][t])
 
-
     # check if exists a negative weighted cycle
     is_neg_cycle = False
     for i in range(n):
