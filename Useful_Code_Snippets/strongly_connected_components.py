@@ -1,4 +1,4 @@
-from collections import defaultdict
+from collections import defaultdict 
 edges = [[0, 1], [1, 3], [1, 2], [1, 4], [4, 11], [4, 1], [2, 5], 
          [5, 6], [6, 5], [6, 2], [5, 8], [7, 8], [7, 9], [9, 7],
          [8, 9], [9, 10], [10, 11], [11, 8]]
@@ -34,12 +34,17 @@ def topo_sort(graph, n, start, pre, post):
             if post[start] < post[end]:
                 is_cycle = True
                 break
-    # topo_sort      
-    sorted_keys = sorted(post.keys(), key = post.get, reverse = True)
-    return sorted_keys, pre, post, is_cycle
+
+    # topo_sort in O(n) time
+    arr_2n_size = [None for i in range(2*n + 1)]
+    for vertex, post_num in post.items():
+        arr_2n_size[post_num] = vertex
+    topo_order = [i for i in arr_2n_size if i != None][::-1]
+    return topo_order, pre, post, is_cycle
 
 # find topological order on reverse graph
 topo_order, pre, post, is_cycle = topo_sort(r_graph, 12, 2, dict(), dict())
+topo_order = topo_order[::-1]
 print (topo_order)
 
 def traverse(graph, u, explored):
@@ -56,16 +61,10 @@ strong_connected_comps = defaultdict(list)
 
 i = 1
 while topo_order:
-    start = topo_order[0]
-    explored_vertices = traverse(graph, start, [])
-    strong_connected_comps[i].extend(explored_vertices)
-    for vertex in explored_vertices:
-        topo_order.remove(vertex)
-    i += 1
+    start = topo_order.pop()
+    if visited[start] == False:
+        explored_vertices = traverse(graph, start, [])
+        strong_connected_comps[i].extend(explored_vertices)
+        i += 1
 
 print (strong_connected_comps)
-
- 
-
-
-
