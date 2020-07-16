@@ -5,14 +5,14 @@ for start, end in edges:
     graph[start].append(end)
 
 def topo_sort(graph, n, pre, post):
-    def Explore(u):
+    def explore(u):
         nonlocal clock
         pre[u] = clock
         clock += 1
         visited[u] = True
         for v in graph[u]:
             if visited[v] == False:
-                Explore(v)
+                explore(v)
         post[u] = clock
         clock += 1
         
@@ -20,7 +20,7 @@ def topo_sort(graph, n, pre, post):
     visited = [False for i in range(n)]
     for node in range(n):
         if visited[node] == False:
-            Explore(node)
+            explore(node)
 
     # detect back edge == detect cycle
     is_cycle = False
