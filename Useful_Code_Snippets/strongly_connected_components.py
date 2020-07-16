@@ -67,4 +67,5 @@ while topo_order:
         strong_connected_comps[i].extend(explored_vertices)
         i += 1
 
+# output reverse topologically sorted SCC
 print (strong_connected_comps)
