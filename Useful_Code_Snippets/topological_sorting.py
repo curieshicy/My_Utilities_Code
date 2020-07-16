@@ -30,8 +30,13 @@ def topo_sort(graph, n, start, pre, post):
             if post[start] < post[end]:
                 is_cycle = True
                 break
-    # topo_sort      
-    sorted_keys = sorted(post.keys(), key = post.get, reverse = True)
-    return sorted_keys, pre, post, is_cycle
+                
+    # topo_sort in O(n) time
+    arr_2n_size = [None for i in range(2*n + 1)]
+    for vertex, post_num in post.items():
+        arr_2n_size[post_num] = vertex
+    topo_order = [i for i in arr_2n_size if i != None][::-1]
+    
+    return topo_order, pre, post, is_cycle
         
 print (topo_sort(graph, 8, 1, dict(), dict()))
