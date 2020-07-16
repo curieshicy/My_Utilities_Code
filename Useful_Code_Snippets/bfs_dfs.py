@@ -18,6 +18,13 @@ def bfs(graph, start):
                 if k not in visited:
                     queue.append(k)
                     visited.add(k)
+
+def dfs(graph, start, visited):
+    visited.add(start)
+    print (start)
+    for k in graph[start]:
+        if k not in visited:
+            dfs(graph, k, visited)
                     
 def dfs(graph, start, visited):
     if start not in visited:
