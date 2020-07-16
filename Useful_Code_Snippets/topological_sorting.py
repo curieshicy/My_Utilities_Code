@@ -34,5 +34,4 @@ def topo_sort(graph, n, start, pre, post):
     sorted_keys = sorted(post.keys(), key = post.get, reverse = True)
     return sorted_keys, pre, post, is_cycle
         
-
 print (topo_sort(graph, 8, 1, dict(), dict()))
