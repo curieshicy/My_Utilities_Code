@@ -63,10 +63,8 @@ class Solution:
                 node = stack.pop()
                 if node:
                     self.res.append(node.val)
-                    if node.left:
-                        stack.append(node.left)
-                    if node.right:
-                        stack.append(node.right)
+                    stack.append(node.left)
+                    stack.append(node.right)
                         
             self.res = self.res[::-1]
             
