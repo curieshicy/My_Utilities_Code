@@ -1,6 +1,5 @@
 import heapq
 from collections import defaultdict
-# find the path that maximize the product of probabilities
 N = 5
 edges = [[0,1], [1,2], [0,3], [1,3], [1,4], [2,4], [3,4]]
 dists = [6, 5, 1, 2, 2, 5, 1]
