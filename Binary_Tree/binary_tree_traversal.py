@@ -8,15 +8,13 @@ class TreeNode:
         self.right = None
 
 class Solution:
-
     def __init__(self):
         self.res = []
 
     def recur_traversal(self, root, mode): # return a python list
-
         if not root:
             return
-
+        
         if mode == 'inorder':
             self.recur_traversal(root.left, mode)
             self.res.append(root.val)
@@ -34,15 +32,13 @@ class Solution:
         
         return self.res
     
-    def iter_traversal(self, root, mode):
-        
+    def iter_traversal(self, root, mode):        
         if mode == "inorder": # l, R, r
             stack = []
             while root or stack:
                 if root:
                     stack.append(root)
                     root = root.left
-
                 else:
                     root = stack.pop()
                     self.res.append(root.val)
@@ -64,10 +60,8 @@ class Solution:
                 if node:
                     self.res.append(node.val)
                     stack.append(node.left)
-                    stack.append(node.right)
-                        
-            self.res = self.res[::-1]
-            
+                    stack.append(node.right)                        
+            self.res = self.res[::-1]            
         return self.res
     
         
