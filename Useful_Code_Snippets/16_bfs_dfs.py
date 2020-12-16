@@ -5,29 +5,35 @@ graph = defaultdict(list)
 for start, end in pairs:
     graph[start].append(end)
     graph[end].append(start)
+    
+
+def dfs(graph, start, visited, res):
+    visited.add(start)
+    res.append(start)
+    for neighbor in graph[start]:
+        if neighbor not in visited:
+            dfs(graph, neighbor, visited, res)
+    return res
 
 
-def bfs(graph, start):
+def bfs(graph, start, visited, res):
     queue = deque([start])
     visited = {start}
     while queue:
         for _ in range(len(queue)):
             node = queue.popleft()
-            print (node)
-            for k in graph[node]:
-                if k not in visited:
-                    queue.append(k)
-                    visited.add(k)
-
-def dfs(graph, start, res, visited):
-    if start not in visited:
-        visited.add(start)
-        res.append(start)
-        for node in graph[start]:
-            dfs(graph, node, res, visited)
+            res.append(node)
+            for neighbor in graph[node]:
+                if neighbor not in visited:
+                    queue.append(neighbor)
+                    visited.add(neighbor)
     return res
+
+print (dfs(graph, 1, set(), []))
+print (bfs(graph, 1, set(), []))
     
-print (dfs(graph, 1, [], set()))
+    
+
 
     
 
