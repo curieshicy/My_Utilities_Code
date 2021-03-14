@@ -416,29 +416,3 @@ if __name__ == '__main__':
 ##    experiment_6a()
 ##    experiment_6b()
 ##    experiment_6c()
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
