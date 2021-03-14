@@ -472,28 +472,3 @@ if __name__ == '__main__':
 ##    experiment_5b()
 ##    experiment_5c()
 ##    experiment_5d()
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
